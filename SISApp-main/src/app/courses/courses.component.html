@@ -1,0 +1,38 @@
+<div class="main">
+    
+    <div class="col-md-10 col-sm-12">
+        <button class="btn-primary" (click)="createCourse()">create</button>
+    </div>
+
+    <div class="col-md-10 col-sm-12 mb-3">
+        <div class="course-details">
+            <table class="table table-bordered">
+                <thead>
+                   <tr class="table-primary">  
+                       <th>Course Id</th>
+                       <th>Course Name</th>
+                       <th>Department Name</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let li of coursesList">
+                        <td>{{li.id}}</td>
+                        <td>{{li.courseName}}</td>
+                        <td>{{li.deptName}}</td>
+                        <td><button class="btn btn-primary btn-xs mr-10" (click)="editCourse(li)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-xs mr-1">
+                            Details
+                        </button>
+                        <button class="btn btn-success btn-xs mr-1" (click)="deleteCourse(li)">
+                            Delete
+                        </button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

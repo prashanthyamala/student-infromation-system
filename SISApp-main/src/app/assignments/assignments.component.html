@@ -1,0 +1,40 @@
+<div class="main">
+    
+    <div class="col-md-10 col-sm-12">
+        <button class="btn-primary" (click)="createAssignment()">create</button>
+    </div>
+
+    <div class="col-md-10 col-sm-12 mb-3">
+        <div class="assignment-details">
+            <table class="table table-bordered">
+                <thead>
+                   <tr class="table-primary">  
+                       <th>Course Id</th>
+                       <th>Course Name</th>
+                       <th>Instructor Name</th>
+                       <th>Term Name</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let li of assignmentList">
+                        <td>{{li.id}}</td>
+                        <td>{{li.courseName}}</td>
+                        <td>{{li.instructorName}}</td>
+                        <td>{{li.termName}}</td>
+                        <td><button class="btn btn-primary btn-xs mr-10" (click)="editAssignment(li)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-xs mr-1">
+                            Details
+                        </button>
+                        <button class="btn btn-success btn-xs mr-1" (click)="deleteAssignment(li)">
+                            Delete
+                        </button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

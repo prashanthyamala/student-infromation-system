@@ -1,0 +1,46 @@
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form [formGroup]="assignmentForm">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="Course"
+                            formControlName="courseName" customValidateMessages controlID="#courseNameError">
+                            <option value="" selected disabled>Course</option>
+                            <option *ngFor="let name of courses" [value]="name.id">{{name.courseName}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="Instructor"
+                            formControlName="instructorName" customValidateMessages controlID="#instructorError">
+                            <option value="" selected disabled>Instructor</option>
+                            <option *ngFor="let name of instructors" [value]="name.id">{{name.instructorFirstName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="Study Terms"
+                            formControlName="termName" customValidateMessages controlID="#termError">
+                            <option value="" selected disabled>Study Terms </option>
+                            <option *ngFor="let name of terms" [value]="name.id">{{name.termName}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button *ngIf="!enableSave" type="button" class="btn-primary"
+                            (click)="addAssignment()">Create</button>
+                        <button *ngIf="enableSave" type="button" class="btn-primary"
+                            (click)="addAssignment()">Update</button>
+                        <button type="button" class="btn-success" (click)="backtoList()">Back to list</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

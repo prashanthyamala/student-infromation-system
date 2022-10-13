@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Student Information System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['home']">Home</a></li>
+      <li><a [routerLink]="['student']">Students</a></li>
+      <li><a [routerLink]="['instructors']">Instructors</a></li>
+      <li><a [routerLink]="['departments']">Departments</a></li>
+      <li><a [routerLink]="['courses']">Courses</a></li>
+      <li><a [routerLink]="['terms']">Study Terms</a></li>
+      <li><a [routerLink]="['assignment']">Teaching Assignments</a></li>
+      <li><a [routerLink]="['registration']">Course Registrations</a></li>
+      <li><a [routerLink]="['about']">About</a></li>
+      <li><a [routerLink]="['contact']">Contact</a></li>   
+  </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+<div class="footer"><footer><p>&copy; 2021 - Ouda SIS Application</p></footer>
+</div>

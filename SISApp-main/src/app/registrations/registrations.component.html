@@ -1,0 +1,38 @@
+<div class="main">
+    
+    <div class="col-md-10 col-sm-12">
+        <button class="btn-primary" (click)="createRegistration()">create</button>
+    </div>
+
+    <div class="col-md-10 col-sm-12 mb-3">
+        <div class="Registration-details">
+            <table class="table table-bordered">
+                <thead>
+                   <tr class="table-primary">  
+                       <th>Course Name</th>
+                       <th>Term Name</th>
+                       <th>Student First Name</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let li of registrationList">
+                        <td>{{li.courseName}}</td>
+                        <td>{{li.termName}}</td>
+                        <td>{{li.studentName}}</td>
+                        <td><button class="btn btn-primary btn-xs mr-10" (click)="editRegistration(li)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-xs mr-1">
+                            Details
+                        </button>
+                        <button class="btn btn-success btn-xs mr-1" (click)="deleteRegistration(li)">
+                            Delete
+                        </button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

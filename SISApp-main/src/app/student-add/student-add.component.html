@@ -1,0 +1,55 @@
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form [formGroup]="studentForm">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>StudentId</label>
+                        <input id="id" formControlName="studentId" name="Full Name" placeholder="Id" [readonly]="enableSave"
+                            class="form-control" type="number">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Student First Name</label>
+                        <input type="text" formControlName="studentFirstName" class="form-control" id="firstName"
+                            placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Student Last Name</label>
+                        <input type="text" formControlName="studentLastName" class="form-control" id="lastName"
+                            placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Student Enrollment Date</label>
+                        <input type="date" formControlName="studentEnrollmentDate" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Contact Number</label>
+                        <input type="number" formControlName="studentContactNumber" class="form-control" id="number"
+                            placeholder="Contact Number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Address</label>
+                        <textarea  formControlName="studentAddress" class="form-control" id="address"
+                            placeholder="Address"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button *ngIf="!enableSave" type="button" class="btn-primary" (click)="addStudent()">Create</button>
+                        <button  *ngIf="enableSave" type="button" class="btn-primary" (click)="addStudent()">Update</button>
+                        <button type="button" class="btn-success" (click)="backtoList()">Back to list</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

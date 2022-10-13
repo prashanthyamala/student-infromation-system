@@ -1,0 +1,40 @@
+<div class="main">
+    
+    <div class="col-md-10 col-sm-12">
+        <button class="btn-primary" (click)="createInstructor()">create</button>
+    </div>
+
+    <div class="col-md-10 col-sm-12 mb-3">
+        <div class="instructor-details">
+            <table class="table table-bordered">
+                <thead>
+                   <tr class="table-primary">  
+                       <th>Instructor First Name</th>
+                       <th>Instructor Last Name</th>
+                       <th>Contact Number</th>
+                       <th>Instructor Hire Date</th>    
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let li of instructorsList">
+                        <td>{{li.instructorFirstName}}</td>
+                        <td>{{li.instructorLastName}}</td>
+                        <td>{{li.instructorNumber}}</td>
+                        <td>{{li.instructorDate}}</td>
+                        <td><button class="btn btn-primary btn-xs mr-10" (click)="editInstructor(li)">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-xs mr-1">
+                            Details
+                        </button>
+                        <button class="btn btn-success btn-xs mr-1" (click)="deleteInstructor(li)">
+                            Delete
+                        </button>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

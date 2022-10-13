@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form [formGroup]="termForm">
+                
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Term Name</label>
+                        <input type="text" formControlName="termName" class="form-control" id="termName"
+                            placeholder="Term Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Term Start Date</label>
+                        <input type="date" formControlName="termStartDate" class="form-control" id="termStartDate"
+                            placeholder="Term Start Date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Term End Date</label>
+                        <input type="date" formControlName="termEndDate" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Term Year</label>
+                        <input type="number" formControlName="termYear" class="form-control" id="year"
+                            placeholder="Year">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Term Season</label>
+                        <input type="text" formControlName="termSeason" class="form-control" id="season"
+                            placeholder="Season">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button *ngIf="!enableSave" type="button" class="btn-primary" (click)="addTerm()">Create</button>
+                        <button  *ngIf="enableSave" type="button" class="btn-primary" (click)="addTerm()">Update</button>
+                        <button type="button" class="btn-success" (click)="backtoList()">Back to list</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

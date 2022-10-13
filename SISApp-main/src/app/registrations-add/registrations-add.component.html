@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form [formGroup]="registrationForm">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="Course"
+                            formControlName="courseName" customValidateMessages controlID="#courseNameError">
+                            <option value="" selected disabled>Course</option>
+                            <option *ngFor="let name of courses" [value]="name.id">{{name.courseName}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="Study Terms"
+                            formControlName="termName" customValidateMessages controlID="#termError">
+                            <option value="" selected disabled>Study Terms </option>
+                            <option *ngFor="let name of terms" [value]="name.id">{{name.termName}}</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="form-row">
+                   
+                    <div class="form-group col-md-12">
+                        <select type="text" class="form-control form-control-sm" placeholder="student"
+                            formControlName="studentName" customValidateMessages controlID="#studentError">
+                            <option value="" selected disabled>student</option>
+                            <option *ngFor="let name of students" [value]="name.id">{{name.studentFirstName}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button *ngIf="!enableSave" type="button" class="btn-primary"
+                            (click)="addRegistration()">Create</button>
+                        <button *ngIf="enableSave" type="button" class="btn-primary"
+                            (click)="addRegistration()">Update</button>
+                        <button type="button" class="btn-success" (click)="backtoList()">Back to list</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
